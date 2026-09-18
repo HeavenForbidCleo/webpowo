@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <style>
+                #registration{
+                        border: 2px solid black;
+                        padding: 10px;
+                        width: 400px;
+                        margin-right: 500px;
+                }
+        </style>
+        
+    </head>
+    <body>
+        <fieldset id = "registration">
+            <h1 style="font-size: large;">Kindly fill in the registration form</h1>
+            <h2>Registration form</h2>
+
+            <fieldset>
+                First Name*: <br>
+                <input type = "text"
+                        name = "firstname">
+                <br>
+
+                Last Name:<br>
+                <input placeholder = "Enter your name" 
+                        type = "text"
+                        name = "lastname">
+                <br>
+
+                Email <br>
+                <input type = "email"
+                        name = "email">
+                <br>
+                
+                Password <br>
+                <input type = "password"
+                        name = "password">
+                <br>
+
+                date of birth <br>
+                <input type = "date"
+                        name = "lol">
+                <br>
+
+                <fieldset>
+                    <legend>Gender:</legend>
+                    <input type = "radio"
+                            name = "gender"
+                            value = "male">Male
+                    <input type = "radio"
+                            name = "gender"
+                            value = "female">Female
+               </fieldset>         
+               
+               <fieldset>
+                    <legend>Contact Preferences:</legend>
+                    <input type = "checkbox"
+                            name = "contact"
+                            value = "mobile">Mobile
+                    <input type = "checkbox"
+                            name = "contact"
+                            value = "email">Email
+                    <input type = "checkbox"
+                            name = "contact"
+                            value = "smail">Smail
+                        
+               </fieldset>
+
+               Weight: <br>
+               <input type = "number"
+                        name = "weight">
+                <br>
+
+                Height: <br>
+                <input type = "number"
+                        name = "height">
+               <br>
+
+                <fieldset>
+                        <legend>Address</legend>
+
+                        Address: <br>
+                        <input type = "text"
+                                name = "address1"
+                                placeholder = "Address 1">
+                                <br>
+                        <input type = "text"
+                                name = "address2"
+                                placeholder = "Address 2">
+                        <br>
+                        <br>
+                        Postcode:
+                        <br><input type = "number"
+                                name = "postcode">
+                        <br>
+                        <br>
+                        State:
+                        <br><select name = "state">
+                                <option value = "Sabah">Sabah</option>
+                                <option value = "Sarawak">Sarawak</option>
+                                <option value = "Selangor">Selangor</option>
+                                <option value = "Perak">Perak</option>
+                                <option value = "Johor">Johor</option>
+                                <option value = "Kedah">Kedah</option>
+                                <option value = "Kelantan">Kelantan</option>
+                                <option value = "Terengganu">Terengganu</option>
+                                <option value = "Pahang">Pahang</option>
+                                <option value = "Pulau Pinang">Penang</option>
+                                <option value = "Melaka">Melaka</option>
+                                <option value = "Negeri Sembilan">Negeri Sembilan</option>
+                        </select>
+                </fieldset>
+
+                <br>
+                <fieldset>
+                         <Legend>Preferred Payment Method: <br></Legend>
+                         <input type = "radio"
+                                name = "payment"
+                                value = "credit card">Credit Card
+                        <input type = "radio"
+                                name = "payment"
+                                value = "debit card">Debit Card
+                        <input type = "radio"
+                                name = "payment"
+                                value = "online">Online Banking
+                </fieldset>
+                <br>
+               <button
+                    type = "Submit"
+                    name = "register">Register
+                </button>
+                
+                <button
+                    type = "Reset"
+                    name = "reset">Reset
+                </button>
+                <br>
+                *required
+            </fieldset>
+            <br>
+            <br>
+        </fieldset>
+    </body>
+</html>

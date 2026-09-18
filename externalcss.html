@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="external.css">
+        <style>           
+            .myDiv{
+                border: 5px outset rgb(200, 46, 46);
+                background-color: lightblue;
+                text-align: center;
+            }
+            #luigi{
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-variant: small-caps;
+                color: rgb(230, 195, 246);
+            }
+
+            p.italian{font-style: italic;}
+
+            #mystyle{font-size:150%}
+
+            .window{    
+                border: 5px outset rgb(127, 32, 93);
+                background-color: rgb(183, 143, 235);
+                position: fixed;
+                top: 250px;
+                left: 50px;
+                z-index:30;
+                box-shadow: 10px 10px 5px rgb(0, 0, 0);
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="pictures/sunflowerprint.png" alt="sunflower print">
+
+        <h1>It'sa me, Mario!</h1>
+        <p id="luigi">I like to jump into sewers and chill with them mutant turtles.</p>
+        <br>
+        <p class="italian"> They sure eat a lot of pizzas!</p>
+        <br>
+        <p id="mystyle">I always leave the place with a bloated tummy if it's not already bloated.</p>
+
+        <h1>The div element</h1>
+
+        <div class="window">
+            <div class="title bar">
+                <div class="title text">Oh a window!</div>
+                <div id="button">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+
+            <div class="myDiv">
+                <h2>Le heading in div</h2>
+                <p>Le paragraph in div</p>
+
+                <h1>The Span Element</h1>
+                <p>My mom has <span style="color:blue;font-weight:bold;">blue eyes</span>.
+                    My dad has <span style="color:darkolivegreen;font-weight:bold;">dark green eyes</span>.</p>
+            </div>
+        </div>
+        <p>Le paragraph outside div</p>
+    </body>
+</html>

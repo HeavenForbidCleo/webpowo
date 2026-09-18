@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Bibi's Website</title>
+        <style>
+            
+            body{
+                background-image: 
+                    url("./pictures/liquid.gif");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                padding-top: 0px;
+                margin: 0;
+
+                overflow-y:scroll;
+            }
+
+            ::-webkit-scrollbar{
+                height: 8px;
+                width: auto;
+            }
+            ::-webkit-scrollbar-thumb{
+                width: 3px;
+                border-radius: 30px;
+                background-color: rgb(117, 157, 206);
+            }
+
+            ::-webkit-scrollbar-thumb:hover{
+                background-color: rgb(190, 116, 247);
+            }
+
+            ::-webkit-scrollbar-track{
+                background-color: pink;
+                width: 5px;
+            }
+
+
+            .somebox{
+                margin: 100px auto;
+                width: 80%;
+                height: 100%;
+                max-width: 1500px;
+                text-align: center;
+                font-family:'Courier New', Courier, monospace;
+                
+                background-color: rgb(70, 40, 125);
+                box-shadow: 10px 10px 10px;
+                border-radius: 10px;
+                border: 10px outset rgb(180, 100, 255);
+                overflow: hidden;
+                padding-bottom: 40px;
+            }
+
+            .smolbox1{
+                background-color: rgb(234, 172, 247);
+                border: 10px outset rgb(114, 109, 252);
+                border-radius: 2px;
+                box-shadow: 5px 5px;
+                width: 750px;
+                text-align: center;
+                padding: 15px;
+                box-sizing: border-box;
+                font-size: large;
+                overflow-x: auto;
+            }
+
+            .smolbox1 h3{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+                margin: 0;
+            }
+
+            .smolbox1 img{
+                display: block;
+            }
+
+            .somebox img{
+                height: 5%;
+                max-width: 1500px;
+                display: inline-block;
+                object-fit: contain;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .content-row{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                width: 90%;
+                margin: 0 auto;
+
+                padding: 20px 0;
+            }
+
+            .somebox iframe{
+                position: absolute;
+                top: 55%;
+                left: 56%;
+                width: 320px;
+                height: 320px;
+                display: block;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            #biodata{
+                background-color: rgb(234, 172, 247);
+                border: 10px outset rgb(114, 109, 252);
+                border-radius: 2px;
+                box-shadow: 5px 5px;
+                margin-top: 7%;
+                width: 750px;
+                text-align: left;
+                padding: 15px;
+                padding-left: 25px;
+                box-sizing: border-box;
+                font-size: x-large;
+                font-family:serif;
+                color:rgb(93, 10, 170);
+                overflow-x: auto;
+
+            }
+
+            .externallinks{
+                background-color: rgb(234, 172, 247);
+                border: 10px outset rgb(114, 109, 252);
+                border-radius: 2px;
+                box-shadow: 5px 5px;
+                width: 450px;
+                text-align: center;
+                padding: 15px;
+                box-sizing: border-box;
+                font-size: large;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                overflow: hidden;
+            }
+
+        </style>
+
+        <style class="links">
+            a:link{color:rgb(130, 64, 245);}
+            a:visited{color:rgb(226, 114, 133);}
+            a:hover{color:rgb(255, 255, 0);}
+        </style>
+
+        <style class="catanimation">
+                .slidinganim{
+                    height: 5px;
+                    width: 100%;
+                    transform: translateY(-40px);
+                    display: flex;
+                    white-space: nowrap;
+                }
+
+                #rowsofitems{
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    padding-right: 5px;
+                    animation: marquee 5s linear infinite;
+                }
+
+                .catto{
+                    flex: 0 0 0em;
+                    width: 1500px;
+                    height: 1500px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                @keyframes marquee {
+                    0%{
+                        transform: translateX(0);
+                    }
+
+                    100%{
+                        transform: translateX(-50%);
+                    }
+                }
+        </style>
+
+        <style class="compuanimation">
+            .animleft{
+                height: 40px;
+                display: flex;
+                flex-direction: column;
+                white-space: nowrap;
+                margin-right: 80%;
+            }
+
+            .animleft2{
+                height: 0px;
+                display: flex;
+                flex-direction: column;
+                white-space: nowrap;
+                margin-right: 80%;
+                transform: translateX(-1);        
+            }
+
+            .animright{
+                height: 40px;
+                display: flex;
+                flex-direction: column;
+                white-space: nowrap;
+                margin-left: 80%;
+            }
+            
+            .animright2{
+                height: 0px;
+                display: flex;
+                flex-direction: column;
+                white-space: nowrap;
+                margin-left: 80%;
+                transform: translateX(-1);        
+            }
+
+            .futurehomebtn2{
+                display: inline-flex;
+                flex-direction: column;
+                gap: 5px;
+                padding-bottom: 5px;
+                animation: floatUp 5s ease-in-out infinite alternate;
+            }
+
+            .futurehomebtn{
+                display: inline-flex;
+                flex-direction: column;
+                gap: 5px;
+                padding-bottom: 5px;
+                animation: floatUp 5s ease-in-out infinite alternate;
+            }
+
+            #compu{
+                flex: 0 0 0em;
+                display: flex;
+                height: 100px;
+                object-fit: contain;
+                display: block;
+            }
+
+            @keyframes floatUp{
+                from{
+                    transform: translateY(-50%);
+                }
+                to{
+                    transform: translateY(-100%);
+                }
+            }
+         
+        </style>
+
+    </header>
+    <body>  
+        
+        <img src="./pictures/dividerstar.webp" alt="star"
+            style="display: block; position: absolute; left: 9%; top: 14% auto; width: 82%; max-width: 1500px; height: 11%; border-radius: 8px;">
+      
+        <div class = "somebox">
+            <br><br><br>
+            <hr><hr><hr>
+            
+            <h1 style="font-size: xxxx-large; color: rgb(238, 190, 255);
+                        ">WELCOME TO MY PERSONAL WEBSITE</h1>
+
+            <div>
+                <img src="./pictures/purple2.webp">
+                <img src="./pictures/purple2.webp">
+            </div>
+
+            <div class="slidinganim">
+                    <div id="rowsofitems">
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                    
+                    </div>
+
+                    <div aria-hidden id="rowsofitems">
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                    
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                        <div class="catto"><img src="./pictures/catto.gif" ><br></div>
+                    
+                    </div>
+            </div>
+            
+            <div class="content-row">
+                <div id = "biodata">
+                    <p><b>Name: Bibi Afifah Hanan</b></p>
+                    <p><b>Nickname: Cleo :P</b></p>
+                    <p><b>Age: 20 years old</b></p>
+                    <p><b>Academic background:</b></p>
+                    <p>>Took UPSR at SK St Anthony</p>
+                    <p>>Took SPM at SMK Bahang</p><br>
+                    <p><b>I'm currently studying in KOLEJ TEKNOLOGI YAYASAN SABAH for my diploma!</b></p>
+                    <p><b>Program: Computer Science</b></p>
+                    <p><b>Section: DDWD 2703</b></p>
+                    <p><b>Matric Card: KTYS242DDWD0083</b></p>
+                </div>
+
+                <div class="smolbox1">
+                    <h3>                    
+                        <img src="./pictures/cat.gif" style="transform: scaleX(-1); height: 60px;">
+                        <a href="./pictures/MyResume.pdf">My CV</a>
+                        <img src="./pictures/cat.gif" style="height: 60px;">
+                    </h3>
+                </div>
+
+                <iframe src="welcomeiframe.html"></iframe>
+
+                <img src="./pictures/purple2.webp" 
+                    style=" height: 5%;
+                    max-width: 1500px;
+                    display: inline-block;
+                    object-fit: contain;">
+
+                 <div class="externallinks">
+                    <h4>! ! Tools ! !</h4>
+                    <a href="calcprojek.html">Basic Calculator</a><br>
+                    <a href="bmiproj.html">BMI Checker</a><br>
+                    <a href="taxproj.html">Income Tax Calculator</a><br>
+                    <a href="unitconvproj.html">Unit Converter</a>
+
+                    <div class="animleft">
+                        <div class="futurehomebtn">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                        </div>
+
+                        <div class="futurehomebtn">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                        </div>
+                    </div>
+                    <div class="animleft2">
+                        <div class="futurehomebtn">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                        </div>
+
+                        <div class="futurehomebtn">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                        </div>
+                    </div>
+
+                    <div class="animright">
+                        <div class="futurehomebtn2">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                        </div>
+
+                        <div class="futurehomebtn">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                        </div>
+                    </div>
+                    <div class="animright2">
+                        <div class="futurehomebtn2">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                        </div>
+
+                        <div class="futurehomebtn">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                            <img src="./pictures/smolcompu.gif" id="compu">
+                        </div>
+                    </div>
+
+                    <img src="./pictures/mellow.webp" style="display: block; height: 200px; margin-left: 32%; transform: translateY(-40px);">
+                </div>
+
+            </div>
+        </div>

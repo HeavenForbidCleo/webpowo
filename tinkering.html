@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <svg style="position:fixed;pointer-events:none">
+        <defs>
+        <filter id="posterize">
+        <feComponentTransfer>
+        <feFuncR type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"></feFuncR>
+        <feFuncG type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"></feFuncG>
+        <feFuncB type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"></feFuncB>
+        </feComponentTransfer>
+            <feComponentTransfer>
+            <feFuncR type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"></feFuncR>
+            <feFuncG type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"></feFuncG>
+            <feFuncB type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"></feFuncB>
+        </feComponentTransfer>
+        </filter>
+        </defs>
+        </svg>
+
+        <svg style="position:fixed;pointer-events:none" image-rendering="optimizeSpeed">
+        <filter id="dither" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+        <feImage width="4" height="4" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAASElEQVR42gXBgQAAIAxFwW8QwhBCCCGEIYQQQgghhBBCCEMYwutOkphzYmbsvdG9l9YaEYG7o1or5xxKKay1UGYyxuC9R++dD7yGJkTj6F0HAAAAAElFTkSuQmCC"></feImage>
+        <feTile/>
+        <feComposite operator="arithmetic" k1="0" k2="1" k3="1" k4="-0.5" in="SourceGraphic"></feComposite>
+        <feComponentTransfer>
+            <feFuncR type="discrete" tableValues="0 1"></feFuncR>
+            <feFuncG type="discrete" tableValues="0 1"></feFuncG>
+            <feFuncB type="discrete" tableValues="0 1"></feFuncB>
+        </feComponentTransfer>
+        </filter>
+        </svg>
+
+        <div class="reipaint">
+         <img id="upload" src="pictures/cheetah-running.gif" aria-hidden="true" alt="" usemap="#upload" width="100%" height="100%">
+            <map name="upload">
+             <area onmouseover="document.getElementById('upload').src='pictures/reipaint.png';" onmouseleave="document.getElementById('upload').src='pictures/cheetah-running.gif';" onmousedown="document.getElementById('upload').src='pictures/reipaint-2.png';" onmouseup="document.getElementById('upload').src='pictures/reipaint.png';" ontouchstart="document.getElementById('upload').src='pictures/reipaint-2.png';" onclick="document.getElementById('window').src='pictures/upload.html?v=1.12';" ontouchend="document.getElementById('upload').src='pictures/reipaint.png';" coords="89,86,73,70,83,38,111,27,137,37,147,61,141,70,145,78,126,88,142,94,138,103,128,99,122,112,118,140,101,122,76,135,85,100,73,96,72,88" shape="poly">
+            </map>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unit Converter</title>
+
+        <style>
+            body {
+                background-image: url("./pictures/starsss.gif");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .containerScript {
+                background-image: url("./pictures/Vintage.gif");
+                border-radius: 20px;
+                margin: 50px auto;
+                width: 80%;
+                padding-top: 5%;
+                padding-bottom: 5%;
+            }
+
+            #homebutton {
+                position: absolute;
+                top: 0;
+                left: 45%;
+            }
+
+            #gohome {
+                margin: 0 auto;
+                cursor: pointer;
+                background-attachment: fixed;
+                background-color: transparent;
+                border: none;
+            }
+
+            .innercontainer {
+                border: 10px outset rgb(102, 161, 249);
+                background-color: rgb(172, 151, 255);
+                border-radius: 20px;
+                box-shadow: 5px 5px 5px;
+                margin: 50px auto;
+                width: 50%;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-align: center;
+                font-size: medium;
+                font-style: oblique;
+                color: blueviolet;
+            }
+
+            .resultcont {
+                border: 10px outset rgb(102, 161, 249);
+                background-color: rgb(172, 151, 255);
+                border-radius: 20px;
+                box-shadow: 5px 5px 5px;
+                margin: 50px auto;
+                color: rgb(133, 3, 254);
+                width: 30%;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-align: center;
+                font-size: large;
+            }
+
+            input[type="number"], input[type="text"], select {
+                background-color: rgb(250, 219, 224);
+                color: blueviolet;
+                border-style: double;
+                border-color: slateblue;
+                padding: 5px;
+            }
+
+            input[type="button"], button {
+                background-color: pink;
+                color: blueviolet;
+                border-style: groove;
+                border-color: slateblue;
+                cursor: pointer;
+                padding: 5px 10px;
+            }
+
+            input[type="button"]:hover, button:hover {
+                background-color: rgb(226, 146, 255);
+                color: white;
+                border-color: blueviolet;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="containerScript">
+            <div id="homebutton">
+                <button id="gohome" onclick="goHome()">
+                    <img src="./pictures/smolcompu.gif" style="display: block; height: 100px;">
+                </button>
+            </div>
+
+            <div class="innercontainer">
+                <h1>Welcome To The Unit Converter!</h1>
+                <hr><hr>
+
+                <fieldset>
+                    <div class="conversion">
+                        From:
+                        <input type="number" id="input" placeholder="Enter value">
+                        <select id="inputunit">
+                            <option value="cm">Centimeter</option>
+                            <option value="m" selected>Meter</option>
+                            <option value="km">Kilometer</option>
+                        </select>
+
+                        <br><br>
+
+                        <button type="button" id="swapBtn">Swap</button>
+
+                        <br><br>
+
+                        To:
+                        <input type="text" id="output" readonly>
+                        <select id="outputunit">
+                            <option value="cm">Centimeter</option>
+                            <option value="m">Meter</option>
+                            <option value="km" selected>Kilometer</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="resultcont">
+            <p id="result"></p>
+        </div>
+
+        <script>
+            function goHome() {
+                if (confirm("Go back to main page?")) {
+                    window.location.href = "index.html";
+                }
+            }
+
+            const input = document.getElementById("input");
+            const output = document.getElementById("output");
+            const inputUnit = document.getElementById("inputunit");
+            const outputUnit = document.getElementById("outputunit");
+            const swapBtn = document.getElementById("swapBtn");
+            const result = document.getElementById("result");
+
+            const unitFactors = {
+                cm: 0.01,
+                m: 1,
+                km: 1000
+            };
+
+            function formatNumber(value) {
+                return Number(value).toFixed(4).replace(/\.?0+$/, "");
+            }
+
+            function convertValue(value, fromUnit, toUnit) {
+                const valueInMeters = value * unitFactors[fromUnit];
+                return valueInMeters / unitFactors[toUnit];
+            }
+
+            function updateConversion() {
+                const value = parseFloat(input.value);
+
+                const converted = convertValue(value, inputUnit.value, outputUnit.value);
+                output.value = formatNumber(converted);
+
+                result.textContent =
+                    value + " " + inputUnit.options[inputUnit.selectedIndex].text +
+                    " = " + formatNumber(converted) + " " +
+                    outputUnit.options[outputUnit.selectedIndex].text;
+            }
+
+            input.addEventListener("input", updateConversion);
+            inputUnit.addEventListener("change", updateConversion);
+            outputUnit.addEventListener("change", updateConversion);
+
+            swapBtn.addEventListener("click", function () {
+                const temp = inputUnit.value;
+                inputUnit.value = outputUnit.value;
+                outputUnit.value = temp;
+                updateConversion();
+            });
+        </script>
+    </body>
+</html>

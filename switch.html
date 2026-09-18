@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript switch</h2>
+        <p id = "demo"></p>
+        <script>
+            var dayNo = prompt ("Enter day no: (1-7)");
+            var text = "";
+
+            switch (dayNo){
+                case "1":
+                    text = "Monday";
+                    break;
+                
+                case "2":
+                    text = "Tuesday";
+                    break;
+
+                case "3":
+                    text = "Wednesday";
+                    break;
+
+                case "4":
+                    text = "Thursday";
+                    break;
+
+                case "5":
+                    text = "Friday";
+                    break;
+
+                case "6":
+                    text = "Saturday";
+                    break;
+
+                default:
+                    text = "Sunday";
+                    break;
+                }
+
+                document.getElementById("demo").innerHTML = text;
+        </script>
+
+        <h2>Javascript Arrays</h2>
+        <p id = "brandList"></p>
+
+        <script>
+            var brand = ["Proton", "Perodua", "Toyota"];
+            for (var x in brand){
+                alert(brand[x]);
+            }
+
+            document.getElementById("brandList").innerHTML = brand;
+        </script>
+    </body>
+</html>

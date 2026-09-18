@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First JavaScript</title>
+    </head>
+    <body>
+        <h1>First JavaScript Page</h1>
+        <script>
+            document.write("<hr>");
+            document.write("Hello world wide web");
+            document.write("<hr>");
+            
+            alert("This is an Alert method");
+            confirm("Are you OK?");
+            let name = prompt("What is your name?");
+            let age = prompt("How old are you?", "20");
+            alert("hello "+name+" you are "+age+"yo");
+
+            function myFunction(){
+                let no1 = parseInt(document.getElementById("no1").value);
+                let no2 = parseInt(document.getElementById("no2").value);
+                let res = no1+no2;
+
+                document.getElementById("demo").innerHTML = "Result is: " + res.toString();
+            }
+
+            function checkgrade(){
+                var mark = parseFloat(document.getElementById("no3").value);
+                if (mark >= 80){
+                    mark = "A - very good";
+                }
+                else if (mark >= 60){
+                    mark = "B - Good";
+                }
+                else if (mark >=40){
+                    mark = "C - Pass";
+                }
+                else{
+                    mark = "D - Failed";
+                }
+
+                //document.getElementById("demo").innerHTML = "Result is: " + mark.toString();
+                alert("Result is "+ mark);
+            }
+            
+        </script>
+
+            <h2>Java Functions</h2>
+            
+            <p>This example calls a function which performs a calculations, and returns the result:</p>
+            <input type = "text" id = "no1"></input>
+            <input type = "text" id = "no2"></input>
+
+            <input type = "button" onclick = "myFunction()" id = "tot" value = "Calculate"></input>
+            <p id = "demo"></p>
+            <br>
+
+            <hr2>if else function & float</hr2>
+            <br>
+            <input type = "text" id = "no3"></input>
+            <input type = "button" onclick = "checkgrade()" id = "yot" value = "Calculate"></input>
+            
+    </body>
+</html>

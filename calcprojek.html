@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Basic Calculator</title>
+        
+        <style>
+            body{
+                background-image: url("./pictures/starsss.gif");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .containerScript{
+                background-image: url("./pictures/rubixcube.gif");
+                border-radius: 20px;
+                margin: 50px auto;
+                width: 80%;
+                padding-top: 5%;
+                padding-bottom: 5%;
+            }
+
+            #homebutton{
+                position: absolute;
+                top: 0;
+                left: 45%;
+
+            }
+
+            #gohome{
+                margin: 0 auto;
+
+                cursor: pointer;
+                background-attachment: fixed;
+                background-color: transparent;
+                border: none;
+            }
+
+            .innercontainer{
+                border: 10px outset rgb(102, 161, 249);
+                background-color: rgb(172, 151, 255);
+                border-radius: 20px;
+                box-shadow: 5px 5px 5px;
+                margin: 50px auto;
+                width: 50%;
+
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-align: center;
+                font-size: medium;
+                font-style: oblique;
+                color: blueviolet;
+            }
+
+            .resultcont{
+                border: 10px outset rgb(102, 161, 249);
+                background-color: rgb(172, 151, 255);
+                border-radius: 20px;
+                box-shadow: 5px 5px 5px;
+                margin: 50px auto;
+                color: rgb(133, 3, 254);
+                width: 30%;
+
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-align: center;
+                font-size: large;
+            }
+
+            input[type="text"]{
+                background-color: rgb(250, 219, 224);
+                color: blueviolet;
+                border-style:double;
+                border-color: slateblue;
+            }
+
+            input[type="button"]{
+                background-color: pink;
+                color: blueviolet;
+                border-style: groove;
+                border-color: slateblue;
+                cursor: pointer;
+            }
+
+            input[type="button"]:hover{
+                background-color: rgb(226, 146, 255);
+                color: white;
+                border-color: blueviolet;
+            }
+
+        </style>
+
+        <script>
+            function goHome(){
+                if(confirm("Go back to main page?")){
+                    window.location.href = "index.html";
+                }
+            }
+
+            function AddCalc(){
+                var no1 = parseFloat(document.getElementById("no1").value);
+                var no2 = parseFloat(document.getElementById("no2").value);
+                var result = no1 + no2;
+        
+                document.getElementById("result").innerHTML = "The answer is " + result.toString() + "!";        
+            }
+
+            
+            function SubCalc(){
+                var no1 = parseFloat(document.getElementById("no1").value);
+                var no2 = parseFloat(document.getElementById("no2").value);
+                var result = no1 - no2;
+        
+                document.getElementById("result").innerHTML = "The answer is " + result.toString() + "!";        
+            }
+
+            
+            function MulCalc(){
+                var no1 = parseFloat(document.getElementById("no1").value);
+                var no2 = parseFloat(document.getElementById("no2").value);
+                var result = no1 * no2;
+        
+                document.getElementById("result").innerHTML = "The answer is " + result.toString() + "!";        
+            }
+
+            
+            function DivCalc(){
+                var no1 = parseFloat(document.getElementById("no1").value);
+                var no2 = parseFloat(document.getElementById("no2").value);
+                var result = no1 / no2;
+        
+                document.getElementById("result").innerHTML = "The answer is " + result.toString() + "!";        
+            }
+        </script>
+    </header>
+    <body>
+        <div class="containerScript">
+
+            <div id="homebutton">
+                <button id="gohome" onclick="goHome()">
+                    <img src="./pictures/smolcompu.gif" style="display: block; height: 100px;">
+                </button>
+            </div>    
+
+            <div class="innercontainer">
+                <h1>Welcome To The Basic Calculator!</h1>
+                <hr><hr>
+                <fieldset>
+                    First value:
+                    <input type="text" id="no1">
+                    <br>
+                    Second value:
+                    <input type="text" id="no2">
+
+                    <hr>
+
+                    <br>
+                    <input type="button" id="plus" onclick="AddCalc()" value="Add">
+                    <input type="button" id="minus" onclick="SubCalc()" value="Subtract">
+                    <input type="button" id="mul" onclick="MulCalc()" value="Multiply">
+                    <input type="button" id="div" onclick="DivCalc()" value="Divide">
+
+                    <br><br>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="resultcont">
+            <p id="result"></p>
+        </div>
+    </body>

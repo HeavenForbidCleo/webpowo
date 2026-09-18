@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vote Eligibility</title>
+        <style>
+            #Fname, #Lname, #age{
+                outline: none;
+                border: none;
+            }
+
+            #checkbtn{
+                border-style:unset;
+                outline-style:unset;
+                width: 100%;
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>SPR 2017</h1>
+        <h3>Vote Check:</h3>
+
+            <p>First Name</p>
+            <input type = "text" id = "Fname">
+            <hr>
+            <br>
+            <p>Last Name</p>
+            <input type = "text" id = "Lname"></input>
+            <hr>
+            <br>
+            <p>Age</p>
+            <input type = "text" id = "age"></input>
+            <hr>
+            <br>
+            <input type = "button" onClick = "checkAge()" value = "Check" id = "checkbtn"></input>
+            <br>
+            
+            <img id = "pic" alt = "pic" style = "margin-left: 530px; width: 304px; height: 304px;">
+            
+        <script>
+            function checkAge(){
+                var umur = parseInt(document.getElementById("age").value);
+                var eligibility;
+               
+                if (umur >= 18){
+                    eligibility = "You can vote!"  
+                    document.getElementById("pic").src = "pictures/adults.jpg";
+                }
+                else{
+                    umur = 18 - umur;
+                    eligibility = "You need to wait another " + umur.toString() + "years(s) to vote" ;
+                    document.getElementById("pic").src = "pictures/kids.jpg";
+                }
+
+                var fname = document.getElementById("Fname").value;
+                var lname = document.getElementById("Lname").value;
+
+                alert("Hi " + fname + " " + lname + " - " + eligibility);
+            }   
+        </script>
+    </body>
+</html>

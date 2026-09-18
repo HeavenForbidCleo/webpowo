@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+        function displayMalaysia(){
+            document.getElementById("flag").src="pictures/malaysia.jpg";
+        }
+
+        function displaySabah(){
+            document.getElementById("flag").src="pictures/sabah.jpg";
+        }
+
+        function hideShow(){
+            if(document.getElementById("hide").value == "Hide"){
+                document.getElementById("hide").value = "Show";
+                document.getElementById("flag").style.visibility = "hidden"
+            }
+            else{
+                document.getElementById("hide").value = "Hide";
+                document.getElementById("flag").style.visibility = "visible";
+            }
+        }
+        </script>
+        </head>
+        
+        <body>
+            <h2>Javascript Functions - hide, display and change label</h2>
+            <p>This example calls a function which change a label, hide and display image</p>
+            <input type="button" id="hide" onclick="hideShow()" value="Hide"><img src = "pictures/cloud1.png"> </input>
+            <input type = "button" onclick="displayMalaysia()" value = "Malaysia"></input>
+            <input type = "button" onclick="displaySabah()" value = "Sabah"></input>
+
+            <img id = "flag" src="pictures/malaysia.jpg" alt = "malaysia"
+                style = "width:304px; height:228px;">
+
+            
+        </body>
